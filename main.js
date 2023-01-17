@@ -4,25 +4,14 @@ function tocaSom (idElementAudio) {
 
 const listaDeTeclas = document.querySelectorAll('.tecla');
 
-let contador = 0;
+for (i=0; i< listaDeTeclas.length; i++) {
 
-while (contador < listaDeTeclas.length) {
-
-    const tecla = listaDeTeclas[contador];
-    const instrumento = tecla.classList[1]; 
-    const idAudio = `#som_${instrumento}`; //template string 
-    //como ele vai pegar a classe dos botões e transformar de forma composta na id dos sons? Ele pega só o texto.
-
-    //console.log(idAudio);
-
+    const tecla = listaDeTeclas[i];
+    const instrumento = tecla.classList[1];
+    const idAudio = `#som_${instrumento}`;
+    
     tecla.onclick = function() {
         tocaSom(idAudio);
     };
 
-    contador ++;
-
-    //console.log (contador);
 }
-
-
-
